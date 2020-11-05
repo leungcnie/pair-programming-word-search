@@ -7,10 +7,6 @@ const wordSearch = (letters, word) => {
     const horizontalJoinReverse = letters.map(ls => ls.reverse().join(''));
     console.log(verticalJoinReverse);
 
-    for (const l of horizontalJoinReverse) {
-        if(l.includes(word)) 
-            return true;
-    }
     if (doesInclude(verticalJoin, word)) {
         return true;
     } else if(doesInclude(horizontalJoinReverse, word)) {
@@ -19,20 +15,6 @@ const wordSearch = (letters, word) => {
         return true;
     } else if(doesInclude(verticalJoinReverse, word)) {
         return true;
-    }
-    for (const l of verticalJoinReverse) {
-        if(l.includes(word))
-            return true;
-    }
-
-    for (l of horizontalJoin) {
-        if (l.includes(word)) 
-            return true
-    }
-
-    for (l of verticalJoin) {
-        if (l.includes(word)) 
-            return true
     }
     return false;
 }
